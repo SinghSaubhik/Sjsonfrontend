@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend",
+            "outputPath": "../backend/public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,20 +26,44 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
+            "styles": [{
+                "input": "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/scss/solid.scss"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/scss/regular.scss"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/scss/brands.scss"
+              },
+              {
+                "input": "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss"
+              },
+              {
+                "input": "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
+              },
+              {
+                "input": "src/styles.scss"
+              },
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [],
+            "scripts": [{
+                "input": "node_modules/chart.js/dist/Chart.js"
+              },
+              {
+                "input": "node_modules/hammerjs/hammer.min.js"
+              }
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,13 +73,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },

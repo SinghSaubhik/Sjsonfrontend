@@ -1,0 +1,22 @@
+<div class="loginbox">
+  <h1>Login Here</h1>
+  <form [formGroup]="loginForm">
+    <p>Username</p>
+    <input
+      type="text"
+      name=""
+      placeholder="Enter Username"
+      formControlName="username"
+    />
+    <p>Password</p>
+    <input
+      type="password"
+      name=""
+      placeholder="Enter Password"
+      formControlName="password"
+    />
+    <input type="submit" name="" value="Login" (click)="login()" />
+    <a (click)="navigateTo('forgotpassword')">Lost your password?</a><br />
+    <a (click)="navigateTo('signup')">Don't have an account?</a>
+  </form>
+</div>

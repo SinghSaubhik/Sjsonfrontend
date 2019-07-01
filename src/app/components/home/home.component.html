@@ -1,0 +1,20 @@
+<div class="name">
+  <mdb-card class="card">
+    <!--Title-->
+
+    <!--Text-->
+    <textarea [(ngModel)]="inputjson" #inputText></textarea>
+  </mdb-card>
+  <button
+    mdbBtn
+    type="button"
+    gradient="blue"
+    rounded="true"
+    mdbWavesEffect
+    (click)="generateApi()"
+  >
+    Generate
+  </button>
+
+  <h5 class="urlclass" (click)="copyToClipboard('')">{{ url }}</h5>
+</div>
